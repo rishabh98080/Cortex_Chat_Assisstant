@@ -13,7 +13,7 @@ const app = express();
 -----------------------------*/
 
 // Enable CORS
-app.use(cors());
+app.use(cors('https://cortex-chat-assisstant.vercel.app/'));
 
 // Parse JSON body
 app.use(express.json());
