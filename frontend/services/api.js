@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://cortex-chat-assisstant-d5ft.vercel.app/";
 
 export async function sendMessage(message, image = null) {
 
