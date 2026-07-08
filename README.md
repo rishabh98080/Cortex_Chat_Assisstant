@@ -1,55 +1,164 @@
-# Cortex_Chat_Assisstant
+# Cortex AI – Intelligent Energy Management Assistant
 
-
-# Cortex AI - Intelligent Energy Management Assistant
-
-Cortex AI is an AI-powered chatbot built for industrial Energy Management Systems (EMS). It combines real-time telemetry, historical energy data, and multimodal AI capabilities to help users understand energy consumption, analyze electrical parameters, and interpret uploaded graphs using natural language.
-
-The system is designed to simplify complex electrical concepts for non-technical users while also providing detailed insights for engineers.
+An AI-powered assistant for industrial Energy Management Systems (EMS) that combines telemetry analysis, multimodal AI, and natural language interaction to help users monitor energy consumption, interpret graphs, understand electrical concepts, and generate actionable insights.
 
 ---
 
-## Features
+# Project Overview
 
-- AI-powered conversational assistant
-- Industrial energy telemetry analysis
-- Image-based graph interpretation using Gemini Vision
-- Excel-based telemetry data integration
-- Context-aware responses based on user intent
-- Educational explanations of electrical concepts
-- Personalized recommendations for improving energy efficiency
-- Human-readable energy reports
-- Modern React chat interface
+Cortex AI is an intelligent assistant developed to simplify industrial energy monitoring and analysis. Traditional Energy Management Systems generate large amounts of telemetry data that often require domain expertise to interpret. Cortex AI bridges this gap by allowing users to interact with energy data using natural language.
+
+The application integrates historical telemetry data, uploaded graphs, and Google's Gemini multimodal model to provide meaningful insights, educational explanations, and energy optimization recommendations.
 
 ---
 
-## Tech Stack
+# Problem Statement
 
-### Frontend
+Industrial facilities continuously generate electrical telemetry such as voltage, current, power factor, frequency, and energy consumption. Although this data is valuable, interpreting it often requires specialized engineering knowledge.
+
+The objective of this project is to develop an AI-powered assistant that can:
+
+- Explain complex electrical parameters in simple language.
+- Analyze facility telemetry.
+- Interpret uploaded graphs and dashboards.
+- Answer educational electrical questions.
+- Suggest practical energy-saving recommendations.
+
+---
+
+# Features
+
+## Telemetry Analysis
+
+- Reads telemetry data from Excel.
+- Explains electrical measurements.
+- Detects abnormal readings.
+- Generates structured energy reports.
+
+---
+
+## AI Chatbot
+
+- Natural language interaction.
+- Context-aware responses.
+- Human-friendly explanations.
+- Intent-based response generation.
+
+---
+
+## Image-Based Graph Analysis
+
+Supports uploaded images such as:
+
+- Energy consumption graphs
+- Temperature trends
+- CPU/RAM utilization charts
+- Industrial dashboards
+
+Gemini Vision analyzes uploaded graphs independently and correlates them with telemetry when relevant.
+
+---
+
+## Educational Assistant
+
+Explains concepts such as:
+
+- Power Factor
+- Active & Reactive Power
+- Voltage
+- Current
+- Frequency
+- Energy Consumption
+- Electrical Efficiency
+
+---
+
+## Energy Recommendations
+
+Suggests methods to:
+
+- Improve Power Factor
+- Reduce Energy Consumption
+- Increase Operational Efficiency
+- Identify abnormal energy usage
+
+---
+
+# Tech Stack
+
+## Frontend
 
 - React
 - Vite
 - JavaScript
 - CSS
-- Axios
 
-### Backend
+---
+
+## Backend
 
 - Node.js
 - Express.js
 - Multer
 - XLSX
-- Google Gemini API
+- dotenv
 
 ---
 
-## Project Structure
+## AI
+
+- Google Gemini API
+- Gemini 2.5 Flash
+
+---
+
+## Development Tools
+
+- VS Code
+- Git
+- GitHub
+- Postman
+
+---
+
+# Architecture / Workflow
+
+```
+                  User
+                    │
+                    ▼
+           React Frontend (Vite)
+                    │
+                    ▼
+          Express Backend API
+                    │
+     ┌──────────────┴──────────────┐
+     │                             │
+Telemetry Service            Image Upload
+ (Excel Reader)                 (Multer)
+     │                             │
+     └──────────────┬──────────────┘
+                    │
+              Prompt Builder
+                    │
+                    ▼
+          Google Gemini API
+                    │
+                    ▼
+          AI Generated Response
+                    │
+                    ▼
+          React Chat Interface
+```
+
+---
+
+# Project Structure
 
 ```
 CORTEX
 │
 ├── backend
-│   │
 │   ├── Data
 │   │   ├── Demo Data.xlsx
 │   │   ├── graph1.png
@@ -58,8 +167,7 @@ CORTEX
 │   │   ├── graph4.png
 │   │   ├── graph5.png
 │   │   ├── graph6.png
-│   │   ├── graph7.png
-│   │   └── pic.docx
+│   │   └── graph7.png
 │   │
 │   ├── routes
 │   │   └── chat.js
@@ -71,134 +179,22 @@ CORTEX
 │   │
 │   ├── app.js
 │   ├── server.js
-│   ├── package.json
 │   └── .env
 │
 ├── frontend
-│   │
-│   ├── public
-│   │
-│   ├── services
-│   │   └── api.js
-│   │
 │   ├── src
-│   │   ├── assets
-│   │   │   ├── Data
-│   │   │   ├── hero.png
-│   │   │   ├── react.svg
-│   │   │   └── vite.svg
-│   │   │
-│   │   ├── App.jsx
-│   │   └── App.css
-│   │
+│   ├── public
+│   ├── services
 │   └── package.json
 │
 └── README.md
 ```
 
----─ README.md
-```
-
 ---
 
-## How It Works
+# Installation & Local Setup
 
-### 1. User Interaction
-
-Users can:
-
-- Ask questions about energy usage
-- Upload graphs for analysis
-- Learn electrical concepts
-- Request recommendations for improving efficiency
-
----
-
-### 2. Data Processing
-
-The backend:
-
-- Reads telemetry data from Excel
-- Extracts relevant measurements
-- Builds an intelligent prompt
-- Optionally attaches uploaded images
-- Sends the request to Google's Gemini model
-
----
-
-### 3. AI Response
-
-Gemini determines the user's intent and can:
-
-- Analyze telemetry
-- Explain technical concepts
-- Interpret uploaded graphs
-- Suggest energy-saving measures
-- Generate structured reports
-
----
-
-## Supported User Intents
-
-### Energy Analysis
-
-Examples
-
-- Analyze today's power consumption
-- Why is my power factor low?
-- Compare voltage across phases
-
----
-
-### Graph Analysis
-
-Upload an image and ask:
-
-- Analyze this graph
-- Explain the trend
-- What anomaly do you observe?
-
----
-
-### Educational Questions
-
-Examples
-
-- What is power factor?
-- Explain reactive power
-- Difference between kW and kVA
-
----
-
-### Recommendations
-
-Examples
-
-- How can I reduce energy consumption?
-- How do I improve power factor?
-- Suggest efficiency improvements
-
----
-
-## Image Analysis
-
-Cortex AI supports multimodal input.
-
-Users can upload:
-
-- Power consumption graphs
-- Temperature charts
-- CPU/RAM utilization graphs
-- Energy dashboards
-- Trend plots
-
-The AI analyzes the uploaded graph independently and only uses telemetry data when it is relevant to the user's question.
-
----
-
-## Installation
-
-### Clone Repository
+## Clone Repository
 
 ```bash
 git clone git@github.com:rishabh98080/Cortex_Chat_Assisstant.git
@@ -214,11 +210,9 @@ cd Cortex
 cd backend
 
 npm install
-
-npm run dev
 ```
 
-Create a `.env` file:
+Create a `.env` file.
 
 ```env
 PORT=5000
@@ -228,7 +222,15 @@ GEMINI_API_KEY=YOUR_API_KEY
 MODEL=gemini-2.5-flash
 ```
 
+Run the backend.
+
+```bash
+npm run dev
+```
+
 ---
+
+# **Setup on Local Machine**
 
 ## Frontend Setup
 
@@ -242,94 +244,92 @@ npm run dev
 
 ---
 
-## API Endpoint
-
-### POST
+The frontend will run on:
 
 ```
-/api/chat
+http://localhost:5173
 ```
 
-Supports
+Backend:
 
 ```
-multipart/form-data
-```
-
-Parameters
-
-| Name | Type | Description |
-|------|------|-------------|
-| message | String | User query |
-| image | File | Optional uploaded graph |
-
----
-
-## Example Requests
-
-### Text Query
-
-```
-What is the current power factor?
-```
-
-### Educational Query
-
-```
-Explain reactive power.
-```
-
-### Image Query
-
-```
-Analyze this graph.
+http://localhost:5000
 ```
 
 ---
 
-## Key Functionalities
+# Deployment Details
 
-- Natural Language Understanding
-- Intent Detection
-- Telemetry Analysis
-- Graph Interpretation
-- Recommendation Generation
-- Educational Assistance
-- Industrial Energy Monitoring
+### Frontend
 
----
+- Vercel
 
-## Future Enhancements
+### Backend
 
-- Real-time IoT integration
-- Time-series database support
-- Live smart meter connectivity
-- Predictive energy analytics
-- Automated anomaly detection
-- Multi-facility monitoring
-- Voice interaction
-- User authentication
-- Historical trend visualization
-- Report export (PDF/Excel)
+- Vercel (Serverless Functions)
+
+### AI Model
+
+- Google Gemini API (Gemini 2.5 Flash)
 
 ---
 
-## Screenshots
+# Team Members
 
-<img width="1907" height="973" alt="Screenshot From 2026-07-08 11-22-44" src="https://github.com/user-attachments/assets/24a8749e-10b7-4fc2-8994-28f4c0409433" />
-
-<img width="1907" height="973" alt="image" src="https://github.com/user-attachments/assets/9f0a4405-5237-425b-842e-66f77026b338" />
-
-
----
-
-## License
-
-This project is intended for educational and internship demonstration purposes.
+| Name | Role | Responsibilities |
+|------|------|------------------|
+| **Rishabh Kumar** | Full Stack Developer & AI Integration | Designed and developed the frontend and backend, integrated the Google Gemini API, implemented telemetry processing, prompt engineering, chatbot workflow, image analysis, API development, and deployment. |
+| **Sakshi Harsh** | Research & Architectural Design | Conducted domain research, contributed to system architecture design, assisted in defining project requirements, workflow planning, feature ideation, and overall solution design. |
 
 ---
 
-## Author
+# Assumptions
+
+- Telemetry is available in a structured Excel format.
+- Uploaded graphs are clear and readable.
+- Users provide meaningful questions related to telemetry or uploaded images.
+- Gemini API is available and reachable.
+- Internet connectivity is required for AI inference.
+
+---
+
+# Current Limitations
+
+- Uses Excel instead of a real-time telemetry database.
+- No integration with live smart meters or IoT devices.
+- Limited conversation memory.
+- No authentication or role-based access control.
+- Graph interpretation depends on Gemini Vision and image quality.
+- Historical trend analysis is limited.
+- No predictive analytics or anomaly detection.
+- Supports a single facility at a time.
+
+---
+
+# Future Improvements
+
+- Smart Meter Integration
+- Time-Series Database (InfluxDB / TimescaleDB)
+- Real-Time IoT Streaming
+- AI Agent Architecture
+- Retrieval-Augmented Generation (RAG)
+- Predictive Maintenance
+- Automated Anomaly Detection
+- Role-Based Access Control
+- Multi-Plant Monitoring
+- PDF & Excel Report Generation
+- Live Dashboard
+- Voice Assistant
+
+---
+
+# License
+
+This project was developed for educational and internship demonstration purposes.
+
+---
+
+# Author
 
 **Rishabh Kumar**
 
