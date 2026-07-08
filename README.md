@@ -46,21 +46,20 @@ The system is designed to simplify complex electrical concepts for non-technical
 ## Project Structure
 
 ```
-Cortex
-│
-├── frontend
-│   ├── src
-│   │   ├── assets
-│   │   ├── components
-│   │   ├── services
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   │
-│   └── package.json
+CORTEX
 │
 ├── backend
+│   │
 │   ├── Data
-│   │   └── Demo Data.xlsx
+│   │   ├── Demo Data.xlsx
+│   │   ├── graph1.png
+│   │   ├── graph2.png
+│   │   ├── graph3.png
+│   │   ├── graph4.png
+│   │   ├── graph5.png
+│   │   ├── graph6.png
+│   │   ├── graph7.png
+│   │   └── pic.docx
 │   │
 │   ├── routes
 │   │   └── chat.js
@@ -72,9 +71,32 @@ Cortex
 │   │
 │   ├── app.js
 │   ├── server.js
+│   ├── package.json
+│   └── .env
+│
+├── frontend
+│   │
+│   ├── public
+│   │
+│   ├── services
+│   │   └── api.js
+│   │
+│   ├── src
+│   │   ├── assets
+│   │   │   ├── Data
+│   │   │   ├── hero.png
+│   │   │   ├── react.svg
+│   │   │   └── vite.svg
+│   │   │
+│   │   ├── App.jsx
+│   │   └── App.css
+│   │
 │   └── package.json
 │
 └── README.md
+```
+
+---─ README.md
 ```
 
 ---
