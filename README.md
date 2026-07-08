@@ -294,7 +294,10 @@ Analyze this graph.
 
 ## Screenshots
 
-(Add application screenshots here)
+<img width="1907" height="973" alt="Screenshot From 2026-07-08 11-22-44" src="https://github.com/user-attachments/assets/24a8749e-10b7-4fc2-8994-28f4c0409433" />
+
+<img width="1907" height="973" alt="image" src="https://github.com/user-attachments/assets/9f0a4405-5237-425b-842e-66f77026b338" />
+
 
 ---
 
