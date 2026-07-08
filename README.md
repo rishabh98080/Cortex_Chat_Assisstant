@@ -278,7 +278,7 @@ http://localhost:5000
 
 | Name | Role | Responsibilities |
 |------|------|------------------|
-| **Rishabh Kumar** | Full Stack Developer & AI Integration | Designed and developed the frontend and backend, integrated the Google Gemini API, implemented telemetry processing, prompt engineering, chatbot workflow, image analysis, API development, and deployment. |
+| **Rishabh Kumar** | Full Stack Developer & AI Integration | Designed and developed the frontend and backend, integrated the Google Gemini API, implemented telemetry processing, prompt engineering, chatbot workflow, image analysis,architecture & workflow planning and design, API development, and deployment. |
 | **Sakshi Harsh** | Research & Architectural Design | Conducted domain research, contributed to system architecture design, assisted in defining project requirements, workflow planning, feature ideation, and overall solution design. |
 
 ---
